@@ -40,10 +40,10 @@ def analyze_state():
         win_lines.append(grid[0][2])
 
     total_x = [cell for row in grid for cell in row].count('X')
-    total_y = [cell for row in grid for cell in row].count('O')
+    total_o = [cell for row in grid for cell in row].count('O')
 
-    if abs(total_x - total_y) >= 2:
-        print(total_y)
+    if abs(total_x - total_o) >= 2:
+        print(total_o)
         print(total_x)
         print('Impossible')
     if 'X' in win_lines and 'O' in win_lines:
@@ -51,7 +51,7 @@ def analyze_state():
     elif win_lines:
         print(win_lines[0] + ' wins')
         finished = True
-    elif total_x + total_y == 9:
+    elif total_x + total_o == 9:
         print('Draw')
         finished = True
 
